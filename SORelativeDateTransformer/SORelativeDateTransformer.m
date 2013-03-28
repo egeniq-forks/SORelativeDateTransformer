@@ -146,5 +146,16 @@ static inline NSString *SORelativeDateLocalizedString(NSString *key, NSString *c
 	return transformedValue;
 }
 
+- (NSTimeInterval)timeintervalUntilDisplayChangeForDate:(NSDate *)date {
+    // Approximation
+    NSTimeInterval difference = fabs([date timeIntervalSinceNow]);
+    if (difference < 60) {
+        return 1.0f;
+    } else if (difference < 3600) {
+        return 5.0f;
+    } else {
+        return 60.f;
+    }
+}
 
 @end

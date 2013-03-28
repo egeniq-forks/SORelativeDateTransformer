@@ -42,4 +42,6 @@ SORelativeDateTransformer is a value transformer that generates a human-readable
 */
 - (id) transformedValue:(id)value;
 
+- (NSTimeInterval)timeintervalUntilDisplayChangeForDate:(NSDate *)date;
+
 @end
